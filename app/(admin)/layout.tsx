@@ -20,11 +20,10 @@ export default function AdminLayout({
   }
 
   return (
-    <AuthProvider>
-      <div className="min-h-screen bg-slate-900">
-      {/* Mobile Header */}
-      <div className="lg:hidden bg-gradient-to-r from-royal-900/95 to-slate-900/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 shadow-2xl">
-        <div className="flex items-center justify-between p-4">
+    <div className="min-h-screen bg-slate-900">
+        {/* Mobile Header */}
+        <div className="lg:hidden bg-gradient-to-r from-royal-900/95 to-slate-900/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 shadow-2xl">
+          <div className="flex items-center justify-between p-4">
           <div className="flex items-center">
             <div className="w-10 h-10 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-xl mr-3 flex items-center justify-center text-white text-lg font-bold shadow-lg">
               S
@@ -209,6 +208,6 @@ export default function AdminLayout({
           </div>
         </div>
       </div>
-    </AuthProvider>
+    </div>
   )
 }
