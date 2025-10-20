@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { AuthProvider } from '@/context/AuthContext'
 
 export default function AdminLayout({
   children,
@@ -19,7 +20,8 @@ export default function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <AuthProvider>
+      <div className="min-h-screen bg-slate-900">
       {/* Mobile Header */}
       <div className="lg:hidden bg-gradient-to-r from-royal-900/95 to-slate-900/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 shadow-2xl">
         <div className="flex items-center justify-between p-4">
@@ -207,6 +209,6 @@ export default function AdminLayout({
           </div>
         </div>
       </div>
-    </div>
+    </AuthProvider>
   )
 }

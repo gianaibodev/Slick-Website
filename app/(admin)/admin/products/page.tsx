@@ -8,6 +8,8 @@ import { useAuth } from '@/context/AuthContext'
 import { adminCache } from '@/lib/cache'
 import { TableSkeleton, MobileCardSkeleton } from '@/components/Skeleton'
 
+export const dynamic = 'force-dynamic'
+
 interface Product {
   id: string
   name: string

@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation'
 import { adminCache } from '@/lib/cache'
 import { CardSkeleton } from '@/components/Skeleton'
 
+export const dynamic = 'force-dynamic'
+
 interface DashboardStats {
   totalRevenue: number
   totalOrders: number
@@ -173,7 +175,10 @@ export default function AdminDashboard() {
       setStats(newStats)
 
       // Set recent orders
-      const recentOrdersData = orders?.slice(0, 5) || []
+      const recentOrdersData = orders?.slice(0, 5).map(order => ({
+        ...order,
+        customer_name: order.shipping_address?.name || 'Unknown Customer'
+      })) || []
       setRecentOrders(recentOrdersData)
 
       // Generate recent activity

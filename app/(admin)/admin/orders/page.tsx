@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { adminCache } from '@/lib/cache'
 
+export const dynamic = 'force-dynamic'
+
 interface OrderItem {
   id: string
   product_name: string
